@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscoverNancy.Tests", "DiscoverNancy.Tests\DiscoverNancy.Tests.csproj", "{068F5FB7-E283-4275-9EF9-6A42C5D93141}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscoverNancy.Web", "..\DiscoverNancy.Web\DiscoverNancy.Web.csproj", "{6521C966-975A-44E8-9EAB-CE901B070A24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{068F5FB7-E283-4275-9EF9-6A42C5D93141}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{068F5FB7-E283-4275-9EF9-6A42C5D93141}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{068F5FB7-E283-4275-9EF9-6A42C5D93141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6521C966-975A-44E8-9EAB-CE901B070A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6521C966-975A-44E8-9EAB-CE901B070A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6521C966-975A-44E8-9EAB-CE901B070A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6521C966-975A-44E8-9EAB-CE901B070A24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

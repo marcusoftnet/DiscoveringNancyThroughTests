@@ -58,11 +58,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurableBootstraper_EnableAutoRegistration.cs" />
+    <Compile Include="ConfigurableBoostrapper_Dependency.cs" />
+    <Compile Include="ConfigurableBootstrapper_Module.cs" />
+    <Compile Include="ConfiguratbleBoostrapper_DependencyTests.cs" />
     <Compile Include="TestingNancyWithoutWebStuff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DiscoverNancy.Web\DiscoverNancy.Web.csproj">
+      <Project>{6521C966-975A-44E8-9EAB-CE901B070A24}</Project>
+      <Name>DiscoverNancy.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

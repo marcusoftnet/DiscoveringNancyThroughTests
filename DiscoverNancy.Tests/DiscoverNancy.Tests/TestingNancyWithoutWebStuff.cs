@@ -1,4 +1,4 @@
-﻿using Nancy;
+﻿using Nancy;    
 using Nancy.Testing;
 using Xunit;
 
@@ -13,11 +13,11 @@ namespace DiscoverNancy.Tests
             var browser = new Browser(with => with.Module(new SimpleModule()));
 
             // Act
-            var response = browser.Get("/");
+            var response = browser.Get("/simple");
 
             // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-        }
+        }   
 
         [Fact]
         public void simplest_post_test()
@@ -27,7 +27,7 @@ namespace DiscoverNancy.Tests
             var username = "marcusoftnet";
 
             // Act
-            var response = browser.Post("/login/", with =>
+            var response = browser.Post("/simple/login/", with =>
             {
                 with.HttpRequest();
                 with.FormValue("Username", username);
@@ -35,7 +35,7 @@ namespace DiscoverNancy.Tests
             });
 
             // Assert
-            response.ShouldHaveRedirectedTo("/login?error=true&username=" + username);
+            response.ShouldHaveRedirectedTo("/simple/login?error=true&username=" + username);
         }
 
 
@@ -46,9 +46,9 @@ namespace DiscoverNancy.Tests
         /// </summary>
         public class SimpleModule : NancyModule
         {
-            public SimpleModule()
+            public SimpleModule() : base("/simple")
             {
-                Get["/"] = _ => { return HttpStatusCode.OK; };
+                Get["/"] =  _ => { return HttpStatusCode.OK; };
 
                 Get["/login"] = _ => { return View["Login"]; };
                 Post["/login"] = parameters =>
@@ -60,9 +60,9 @@ namespace DiscoverNancy.Tests
             private Response HandleLogin(dynamic parameters)
             {
                 if (parameters.Password != "supersecret")
-                    return Response.AsRedirect("/login?error=true&username=marcusoftnet");
+                    return Response.AsRedirect("/simple/login?error=true&username=marcusoftnet");
 
-                return Response.AsRedirect("/?username=marcusoftnet");
+                return Response.AsRedirect("/simple/?username=marcusoftnet");
 
             }
         }
