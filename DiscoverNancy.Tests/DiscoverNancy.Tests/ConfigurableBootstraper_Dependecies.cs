@@ -12,7 +12,7 @@ namespace DiscoverNancy.Tests
         // The FakeOrderRepository returns 4 "orders"
 
         [Fact]
-        public void supplying_two_dependencies_instances()
+        public void supplying_two_dependencies_instances2()
         {
             // Arrange
             var browser = new Browser(with =>
@@ -37,9 +37,17 @@ namespace DiscoverNancy.Tests
             var browser = new Browser(with =>
             {
                 with.Module<ModuleWithTwoDependencies>();
-                with.Dependencies(
+               
+                // This call doesn't do the trick
+                /*
+                 with.Dependencies(
                     typeof(FakeCustomerRepository),
-                    typeof(FakeOrderRepository));
+                    typeof(FakeOrderRepository));*/
+
+                // So instead we we register via the Depencendcy<T> method
+                with.Dependency<FakeCustomerRepository>();
+                with.Dependency<FakeOrderRepository>();
+                
             });
 
             // Act
@@ -76,6 +84,25 @@ namespace DiscoverNancy.Tests
 
             // As the result shows us
             Assert.Equal("Number of customers: 3\nNumber of orders:4", bodyString);
+        }
+
+        [Fact]
+        public void supplying_two_dependencies_instances()
+        {
+            // Arrange
+            var browser = new Browser(with =>
+                                          {
+                                              with.Module<ModuleWithTwoDependencies>();
+                                              with.Dependencies(
+                                                  new FakeCustomerRepository(),
+                                                  new FakeOrderRepository()); 
+                                          });
+                
+            // Act
+            var response = browser.Get("/2dependencies");
+
+            // Assert
+            Assert.Equal("Number of customers: 3\nNumber of orders:4", response.Body.AsString());
         }
     }
 
