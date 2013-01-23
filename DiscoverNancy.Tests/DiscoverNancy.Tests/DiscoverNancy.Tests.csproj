@@ -58,7 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigurableBootstraper_EnableAutoRegistration.cs" />
+    <Compile Include="ConfigurableBootstraper_Dependecies.cs" />
     <Compile Include="ConfigurableBoostrapper_Dependency.cs" />
     <Compile Include="ConfigurableBootstrapper_Module.cs" />
     <Compile Include="ConfiguratbleBoostrapper_DependencyTests.cs" />

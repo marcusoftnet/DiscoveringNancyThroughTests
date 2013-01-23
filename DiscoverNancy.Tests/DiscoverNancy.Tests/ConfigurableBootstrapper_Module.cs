@@ -24,7 +24,7 @@ namespace DiscoverNancy.Tests
         public void basic_Module_typeparam()
         {
             // Arrange
-            var browser = new Browser(cfg => cfg.Module<ConfigBootTestModule>());
+            var browser = new Browser(with => with.Module<ConfigBootTestModule>());
 
             // Act
             var response = browser.Get("/config");
