@@ -21,7 +21,7 @@ namespace DiscoverNancy.Tests
                                           });
 
             // Act
-            var response = browser.Get(ROOT_URL);
+            var response = browser.Get("/dependency");
 
             // Assert
             Assert.Equal("Number of customers: 3", response.Body.AsString());

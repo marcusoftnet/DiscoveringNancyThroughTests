@@ -20,46 +20,46 @@ namespace DiscoverNancy.Tests
             Assert.Equal("Hello configured fellow", response.Body.AsString());
         }
 
-        [Fact]
-        public void basic_Module_typeparam()
-        {
-            // Arrange
-            var browser = new Browser(with => with.Module<ConfigBootTestModule>());
+            [Fact]
+            public void basic_Module_typeparam()
+            {
+                // Arrange
+                var browser = new Browser(with => with.Module<ConfigBootTestModule>());
 
-            // Act
-            var response = browser.Get("/config");
+                // Act
+                var response = browser.Get("/config");
 
-            // Assert
-            Assert.Equal("Hello configured fellow", response.Body.AsString());
-        }
+                // Assert
+                Assert.Equal("Hello configured fellow", response.Body.AsString());
+            }
 
-        [Fact]            
-        public void basic_Module_instance()
-        {
-            // Arrange
-            var browser = new Browser(cfg => cfg.Module(new ConfigBootTestModule()));
+            [Fact]            
+            public void basic_Module_instance()
+            {
+                // Arrange
+                var browser = new Browser(with => with.Module(new ConfigBootTestModule()));
 
-            // Act
-            var response = browser.Get("/config");
+                // Act
+                var response = browser.Get("/config");
 
-            // Assert
-            Assert.Equal("Hello configured fellow", response.Body.AsString());
-        }
+                // Assert
+                Assert.Equal("Hello configured fellow", response.Body.AsString());
+            }
 
-        [Fact]
-        public void basic_Module_instance_key()
-        {
-            // Arrange
-            // Don't really get this one... 
-            // You can apperantly register the Modules under keys... 
-            var browser = new Browser(cfg => cfg.Module(new ConfigBootTestModule(), "MyModule"));
+            [Fact]
+            public void basic_Module_instance_key()
+            {
+                // Arrange
+                // Don't really get this one... 
+                // You can apperantly register the Modules under keys... 
+                var browser = new Browser(with => with.Module(new ConfigBootTestModule(), "MyModule"));
 
-            // Act
-            var response = browser.Get("/config");
+                // Act
+                var response = browser.Get("/config");
 
-            // Assert
-            Assert.Equal("Hello configured fellow", response.Body.AsString());
-        }
+                // Assert
+                Assert.Equal("Hello configured fellow", response.Body.AsString());
+            }
 
         [Fact]
         public void config_load_several_modules_types()
