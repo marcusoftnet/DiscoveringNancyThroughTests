@@ -58,13 +58,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assembly_Tests.cs" />
+    <Compile Include="BrowserTests\BrowserTests.cs" />
+    <Compile Include="BrowserTests\HttpBodyTests.cs" />
+    <Compile Include="BrowserTests\Query_Headers_And_other_stuff.cs" />
+    <Compile Include="BrowserTests\FormTests.cs" />
+    <Compile Include="ConfigurableBootstrapperTests\ApplicationStartup_Tests.cs" />
+    <Compile Include="ConfigurableBootstrapperTests\Assembly_Tests.cs" />
+    <Compile Include="ConfigurableBootstrapperTests\ConfigurableBoostrapper_Dependency.cs" />
+    <Compile Include="ConfigurableBootstrapperTests\ConfigurableBootstraper_Dependecies.cs" />
+    <Compile Include="ConfigurableBootstrapperTests\ConfigurableBootstrapper_Module.cs" />
+    <Compile Include="ConfigurableBootstrapperTests\ConfiguratbleBoostrapper_DependencyTests.cs" />
     <Compile Include="RequestStartup_Tests.cs" />
-    <Compile Include="ConfigurableBootstraper_Dependecies.cs" />
-    <Compile Include="ConfigurableBoostrapper_Dependency.cs" />
-    <Compile Include="ConfigurableBootstrapper_Module.cs" />
-    <Compile Include="ConfiguratbleBoostrapper_DependencyTests.cs" />
-    <Compile Include="ApplicationStartup_Tests.cs" />
     <Compile Include="TestingNancyWithoutWebStuff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +81,7 @@
       <Name>DiscoverNancy.Web</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
