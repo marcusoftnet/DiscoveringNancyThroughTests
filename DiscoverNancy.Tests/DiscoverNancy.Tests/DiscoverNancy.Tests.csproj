@@ -61,10 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrowserTests\BrowserTests.cs" />
+    <Compile Include="BrowserTests\BodyAssertions.cs" />
     <Compile Include="BrowserTests\HttpBodyTests.cs" />
     <Compile Include="BrowserTests\Query_Headers_And_other_stuff.cs" />
     <Compile Include="BrowserTests\FormTests.cs" />
-    <Compile Include="BrowserTests\BodyAssertions.cs" />
+    <Compile Include="BrowserTests\ResponseObjectProperites.cs" />
     <Compile Include="ConfigurableBootstrapperTests\ApplicationStartup_Tests.cs" />
     <Compile Include="ConfigurableBootstrapperTests\Assembly_Tests.cs" />
     <Compile Include="ConfigurableBootstrapperTests\ConfigurableBoostrapper_Dependency.cs" />
