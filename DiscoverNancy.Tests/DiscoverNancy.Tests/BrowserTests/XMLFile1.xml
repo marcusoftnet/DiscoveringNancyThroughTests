@@ -1,0 +1,6 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+  <kids>
+    <kid name='Albert' age='5' />
+    <kid name='Gustav' age='3' />
+    <kid name='Arvid' age='3' />
+  </kids>
