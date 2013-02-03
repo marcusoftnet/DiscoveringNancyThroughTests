@@ -1,0 +1,16 @@
+﻿<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h2>The home page of @Model.Name</h2>
+
+        <div class="fairyTaleFigure">@Model.Name is @Model.Evil and has the following hangarounds:</div>
+        <ul>
+            @foreach (var hangaround in @Model.Hangarounds)
+            {
+                <li class="hangaround">@hangaround.Name</li>
+            }
+        </ul>
+    </body>
+</html>
