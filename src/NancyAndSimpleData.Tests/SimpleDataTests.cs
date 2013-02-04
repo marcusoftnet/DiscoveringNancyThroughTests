@@ -37,7 +37,7 @@ namespace NancyAndSimpleData.Tests
             // Configure the InMemoryAdapter, that we will test against
             var adapter = new InMemoryAdapter();
             adapter.SetAutoIncrementKeyColumn("FairyTaleFigure", "ID");
-            
+
             // Tell Simple.Data to use the InMemoryAdapter we just created
             Database.UseMockAdapter(adapter);
             var db = Database.Open();
@@ -144,12 +144,12 @@ namespace NancyAndSimpleData.Tests
                     Hangarounds = new[]
                                         {
                                             new FairyTaleFigure{Name = "Sleepy", Evil = false},
-                                            new FairyTaleFigure{Name = "Sleepy2", Evil = false},
-                                            new FairyTaleFigure{Name = "Sleepy3", Evil = false},
-                                            new FairyTaleFigure{Name = "Sleepy4", Evil = false},
+                                            new FairyTaleFigure{Name = "Doc", Evil = false},
+                                            new FairyTaleFigure{Name = "Bashful", Evil = false},
+                                            new FairyTaleFigure{Name = "Dopey", Evil = false},
                                             new FairyTaleFigure{Name = "Grumpy", Evil = true},
-                                            new FairyTaleFigure{Name = "Grumpy6", Evil = false},
-                                            new FairyTaleFigure{Name = "Grumpy7", Evil = false},
+                                            new FairyTaleFigure{Name = "Happy", Evil = false},
+                                            new FairyTaleFigure{Name = "Sneezy", Evil = false},
                                         }
                 };
             }
