@@ -5,8 +5,11 @@
     <body>
         <h2>The home page of @Model.Name</h2>
 
-        <div class="fairyTaleFigure">@Model.Name is @Model.Evil and has the following hangarounds:</div>
-        <ul>
+        <div class="fairyTaleFigure">
+            @Model.Name is @(Model.Evil ? "Evil" : "Good") 
+            and has the following hangarounds:
+        </div>
+        <ul class="hangarounds">
             @foreach (var hangaround in @Model.Hangarounds)
             {
                 <li class="hangaround">@hangaround.Name</li>

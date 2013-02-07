@@ -92,7 +92,7 @@
     <Compile Include="Repositories\FairyTaleFigureRepository.cs" />
     <Compile Include="Repositories\OrderRepository.cs" />
     <Compile Include="Repositories\ProductionCustomerRepository.cs" />
-    <Compile Include="SimpleDataModuleWithView.cs" />
+    <Compile Include="FairyTaleFigureModule.cs" />
     <Compile Include="ViewRenderingModule.cs" />
   </ItemGroup>
   <ItemGroup>

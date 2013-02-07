@@ -15,6 +15,6 @@ namespace DiscoverNancy.Web.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public bool Evil { get; set; }
-        public IEnumerable<FairyTaleFigure> Hangarounds { get; set; }
+        public IList<FairyTaleFigure> Hangarounds { get; set; }
     }
 }

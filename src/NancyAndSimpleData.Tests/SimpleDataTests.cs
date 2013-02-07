@@ -86,7 +86,7 @@ namespace NancyAndSimpleData.Tests
             // Configure the NancyBrowser to use our module
             var browser = new Browser(with =>
                 {
-                    with.Module<SimpleDataModuleWithView>();
+                    with.Module<FairyTaleFigureModule>();
 
                     // Let's configure Nancy.Testing to use our
                     // production repository. 
