@@ -12,27 +12,36 @@ namespace DiscoverNancy.Web
         public const string FIGURE_URL = "/figure";
         private readonly IFairyTaleFigureRepository _repository;
 
+        #region "Don't look here"
+        /// <summary>
+        /// This constructor is just here since other tests that
+        /// used DefaultNancyBootstrapper is scanning all the assemblies and
+        /// fails on this module that needs a dependency
+        /// </summary>
+        public FairyTaleFigureModule() { }
+        #endregion
+
         public FairyTaleFigureModule(IFairyTaleFigureRepository repository)
             : base(FIGURE_URL)
         {
             _repository = repository;
 
-           Get["/{name}"] = p =>
-                        {
-                            return View["FariyTaleFigure", 
-                                _repository.GetFigureByName(p.Name)];
-                        };
+            Get["/{name}/View"] = p =>
+                                 {
+                                     return View["FariyTaleFigure",
+                                         _repository.GetFigureByName(p.Name)];
+                                 };
 
-           Post["/"] = p =>
-                       {
-                           var figure = StoreFigure();
-                           return new RedirectResponse(UrlForFigure(figure));
-                       };
+            Post["/"] = p =>
+                        {
+                            var figure = StoreFigure();
+                            return new RedirectResponse(UrlForFigure(figure));
+                        };
         }
 
         private static string UrlForFigure(FairyTaleFigure figure)
         {
-            return FIGURE_URL + "/" + figure.Name;
+            return string.Format(FIGURE_URL + "/{0}/View", figure.Name);
         }
 
         private FairyTaleFigure StoreFigure()

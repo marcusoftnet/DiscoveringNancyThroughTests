@@ -66,7 +66,9 @@ namespace DiscoverNancy.Tests.ConfigurableBootstrapperTests
         {
             // Arrange
             var browser = new Browser(cfg =>
-                cfg.Modules(typeof(ConfigBootTestModule), typeof(TestingNancyWithoutWebStuff.SimpleModule)));
+                cfg.Modules(
+                    typeof(ConfigBootTestModule), 
+                    typeof(TestingNancyWithoutWebStuff.SimpleModule)));
 
             // Act
             // Since we have loaded the SimpleModule we can now safely access that route too

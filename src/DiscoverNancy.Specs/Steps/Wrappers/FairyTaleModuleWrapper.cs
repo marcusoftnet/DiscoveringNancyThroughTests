@@ -38,7 +38,7 @@ namespace DiscoverNancy.Specs.Steps.Wrappers
             // But we're really interested in the resulting 'page'
             // so we follow that link and get the result
             // view after the post back and save it in _latestResponse
-            var expectedPath = "/figure/" + name;
+            var expectedPath = "/figure/" + name + "/View";
             _latestResponse.ShouldHaveRedirectedTo(expectedPath);
             _latestResponse = _browser.Get(expectedPath);
         }
